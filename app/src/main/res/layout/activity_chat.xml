@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
@@ -27,6 +26,18 @@
             android:textSize="18sp"
             android:textColor="#0B1B2B"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/btnTrash"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Clear"
+            android:src="@drawable/ic_trash"
+            app:tint="#0B1B2B"
+            app:layout_constraintEnd_toStartOf="@id/btnPlans"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -68,63 +79,47 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Center Content -->
-    <LinearLayout
-        android:id="@+id/centerContent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        app:layout_constraintTop_toBottomOf="@id/topBar"
-        app:layout_constraintBottom_toTopOf="@id/inputBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="36dp"/>
-
-        <TextView
-            android:id="@+id/tvBigTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sanfoor"
-            android:textStyle="bold"
-            android:textSize="44sp"
-            android:textColor="#0B1B2B"/>
-
-        <TextView
-            android:id="@+id/tvSubtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:text="Welcome back, Cybersecurity and Cloud Computing student! I'm ready to help with your study plan."
-            android:textSize="13sp"
-            android:textColor="#6B7C8F"
-            android:lineSpacingExtra="2dp"/>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp"/>
-
-    </LinearLayout>
-
+    <!-- Messages list -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMessages"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:clipToPadding="false"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
+        android:clipToPadding="false"
         app:layout_constraintTop_toBottomOf="@id/topBar"
-        app:layout_constraintBottom_toTopOf="@id/inputBar"
+        app:layout_constraintBottom_toTopOf="@id/chipGroupChat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Suggestion chips (bottom) -->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroupChat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="10dp"
+        app:singleLine="false"
+        app:chipSpacingHorizontal="10dp"
+        app:chipSpacingVertical="10dp"
+        app:layout_constraintBottom_toTopOf="@id/inputBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <com.google.android.material.chip.Chip
+            style="@style/SanfoorChip"
+            android:text="Tell me about the University Compulsory Requirements courses"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/SanfoorChip"
+            android:text="Compare Artificial Intelligence in Cybersecurity and Leadership and social accountability"/>
+
+        <com.google.android.material.chip.Chip
+            style="@style/SanfoorChip"
+            android:text="What are the prerequisites for Database and Application Database?"/>
+
+    </com.google.android.material.chip.ChipGroup>
 
     <!-- Input Bar -->
     <com.google.android.material.card.MaterialCardView
