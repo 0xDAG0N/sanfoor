@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rvMessages;
     private ChatAdapter adapter;
+
+    private View welcomeContainer;
+
     private final ArrayList<Message> messages = new ArrayList<>();
 
     @Override
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
+        // ✅ Bind views (IMPORTANT: use the field, not a local variable)
+        welcomeContainer = findViewById(R.id.welcomeContainer);
         etMessage = findViewById(R.id.etMessage);
         btnSend = findViewById(R.id.btnSend);
 
@@ -49,13 +54,18 @@ public class MainActivity extends AppCompatActivity {
         adapter = new ChatAdapter(messages);
         rvMessages.setAdapter(adapter);
 
-        // Optional: initial bot message
+        // Optional: initial bot message (keep welcome visible at start)
         messages.add(new Message("Hi Mahmoud 👋 Ask me anything.", false));
         adapter.notifyItemInserted(messages.size() - 1);
 
         btnSend.setOnClickListener(v -> {
             String msg = etMessage.getText() != null ? etMessage.getText().toString().trim() : "";
             if (msg.isEmpty()) return;
+
+            // ✅ Hide welcome ONLY when user sends first message
+            if (welcomeContainer != null && welcomeContainer.getVisibility() == View.VISIBLE) {
+                welcomeContainer.setVisibility(View.GONE);
+            }
 
             // Add user message
             messages.add(new Message(msg, true));
