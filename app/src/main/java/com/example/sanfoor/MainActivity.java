@@ -2,6 +2,8 @@ package com.example.sanfoor;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextInputEditText etMessage;
     private FloatingActionButton btnSend;
+    private ImageButton btnTheme;
 
     private RecyclerView rvMessages;
     private ChatAdapter adapter;
@@ -48,11 +51,23 @@ public class MainActivity extends AppCompatActivity {
         welcomeContainer = findViewById(R.id.welcomeContainer);
         etMessage = findViewById(R.id.etMessage);
         btnSend = findViewById(R.id.btnSend);
+        btnTheme = findViewById(R.id.btnTheme);
 
         rvMessages = findViewById(R.id.rvMessages);
         rvMessages.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ChatAdapter(messages);
         rvMessages.setAdapter(adapter);
+
+        btnTheme.setOnClickListener(v -> {
+            int mode = AppCompatDelegate.getDefaultNightMode();
+
+            if (mode == AppCompatDelegate.MODE_NIGHT_YES) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+        });
+
 
         // Optional: initial bot message (keep welcome visible at start)
         messages.add(new Message("Hi Mahmoud 👋 Ask me anything.", false));
@@ -82,4 +97,6 @@ public class MainActivity extends AppCompatActivity {
             rvMessages.scrollToPosition(pos2);
         });
     }
+
+
 }

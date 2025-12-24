@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
         app:cardElevation="2dp"
-        app:cardBackgroundColor="#2F80FF"
+        app:cardBackgroundColor="@color/brand_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:padding="12dp"
             android:text="Hello"
-            android:textColor="@android:color/white"
+            android:textColor="@color/text_on_brand"
             android:textSize="14sp"
             android:maxWidth="280dp"/>
     </com.google.android.material.card.MaterialCardView>
