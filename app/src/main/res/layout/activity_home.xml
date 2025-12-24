@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/background_main">
 
     <!-- Top Bar -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +25,7 @@
             android:text="Sanfoor"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:textColor="#0B1B2B"
+            android:textColor="@color/text_primary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -37,7 +37,7 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_calendar"
             android:contentDescription="Plans"
-            app:tint="#0B1B2B"
+            app:tint="@color/icon_tint"
             app:layout_constraintEnd_toStartOf="@id/btnTheme"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -49,7 +49,7 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_moon"
             android:contentDescription="Theme"
-            app:tint="#0B1B2B"
+            app:tint="@color/icon_tint"
             app:layout_constraintEnd_toStartOf="@id/btnLang"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -61,14 +61,14 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_globe"
             android:contentDescription="Language"
-            app:tint="#0B1B2B"
+            app:tint="@color/icon_tint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Welcome Container (HIDDEN after first message) -->
+    <!-- Welcome Container -->
     <LinearLayout
         android:id="@+id/welcomeContainer"
         android:layout_width="0dp"
@@ -88,7 +88,7 @@
             android:text="Sanfoor"
             android:textStyle="bold"
             android:textSize="44sp"
-            android:textColor="#0B1B2B"/>
+            android:textColor="@color/text_primary"/>
 
         <TextView
             android:id="@+id/tvSubtitle"
@@ -98,7 +98,7 @@
             android:gravity="center"
             android:text="Welcome back, Cybersecurity and Cloud Computing student! I'm ready to help with your study plan."
             android:textSize="13sp"
-            android:textColor="#6B7C8F"/>
+            android:textColor="@color/text_secondary"/>
     </LinearLayout>
 
     <!-- Chat Messages -->
@@ -125,7 +125,7 @@
         app:cardCornerRadius="18dp"
         app:cardElevation="6dp"
         app:strokeWidth="1dp"
-        app:strokeColor="#E7EEF6"
+        app:strokeColor="@color/stroke_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -143,7 +143,7 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/ic_menu"
                 android:contentDescription="Menu"
-                app:tint="#4E5D6C"
+                app:tint="@color/icon_tint"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -154,7 +154,8 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:hint="Ask Sanfoor anything..."
-                android:textColor="#0B1B2B"
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
                 android:textSize="14sp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
@@ -165,12 +166,12 @@
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnSend"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:src="@drawable/ic_send"
-                android:contentDescription="Send"
-                app:tint="@android:color/white"
-                app:backgroundTint="#2F80FF"
+                app:fabSize="mini"
+                app:tint="@color/text_on_brand"
+                app:backgroundTint="@color/brand_blue"
                 app:elevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

@@ -2,4 +2,15 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <!-- Semantic Colors -->
+    <color name="text_primary">#0B1B2B</color>
+    <color name="text_secondary">#4E5D6C</color>
+    <color name="background_main">#FFFFFF</color>
+    <color name="surface_input">#FFFFFF</color>
+    <color name="stroke_color">#E7EEF6</color>
+    <color name="brand_blue">#2F80FF</color>
+    <color name="icon_tint">#0B1B2B</color>
+    <color name="bot_bubble_stroke">#E7EEF6</color>
+    <color name="text_on_brand">#FFFFFF</color>
 </resources>

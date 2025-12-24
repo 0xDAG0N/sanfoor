@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white">
+    android:background="@color/background_main">
 
     <!-- Top Bar -->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,7 +24,7 @@
             android:text="Sanfoor"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:textColor="#0B1B2B"
+            android:textColor="@color/text_primary"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -36,7 +36,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="Clear"
             android:src="@drawable/ic_trash"
-            app:tint="#0B1B2B"
+            app:tint="@color/icon_tint"
             app:layout_constraintEnd_toStartOf="@id/btnPlans"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -48,7 +48,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="Plans"
             android:src="@drawable/ic_calendar"
-            app:tint="#0B1B2B"
+            app:tint="@color/icon_tint"
             app:layout_constraintEnd_toStartOf="@id/btnTheme"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -60,7 +60,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="Theme"
             android:src="@drawable/ic_moon"
-            app:tint="#0B1B2B"
+            app:tint="@color/icon_tint"
             app:layout_constraintEnd_toStartOf="@id/btnLang"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -72,7 +72,7 @@
             android:background="@android:color/transparent"
             android:contentDescription="Language"
             android:src="@drawable/ic_globe"
-            app:tint="#0B1B2B"
+            app:tint="@color/icon_tint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
@@ -132,7 +132,7 @@
         app:cardCornerRadius="18dp"
         app:cardElevation="6dp"
         app:strokeWidth="1dp"
-        app:strokeColor="#E7EEF6"
+        app:strokeColor="@color/stroke_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -150,7 +150,7 @@
                 android:background="@android:color/transparent"
                 android:contentDescription="Menu"
                 android:src="@drawable/ic_menu"
-                app:tint="#4E5D6C"
+                app:tint="@color/text_secondary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -161,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:hint="Ask Sanfoor anything..."
-                android:textColor="#0B1B2B"
+                android:textColor="@color/text_primary"
                 android:textSize="14sp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
@@ -176,8 +176,8 @@
                 android:layout_height="44dp"
                 android:contentDescription="Send"
                 android:src="@drawable/ic_send"
-                app:tint="@android:color/white"
-                app:backgroundTint="#2F80FF"
+                app:tint="@color/text_on_brand"
+                app:backgroundTint="@color/brand_blue"
                 app:elevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
